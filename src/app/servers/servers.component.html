@@ -1,3 +1,11 @@
 <p>
-  servers works!
+  Name={{getServerName()}}<br>
+  Id={{getServerId()}}
 </p>
+<!-- <input type="text" class="form-control" (input)="onUpdateInput($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName" >
+<!-- <button [ngStyle]="{backgroundColor:getButtonColor()}" class="btn btn-success" [disabled]="disable" (click)="CreateServer()">Create Srever</button> -->
+
+<button [ngClass]="getButtonClass()" [disabled]="disable" (click)="CreateServer()">Create Srever</button>
+<p *ngIf="isServerCreated">{{server}}</p>
+<!-- <p>Server name: {{serverName}}</p> -->
