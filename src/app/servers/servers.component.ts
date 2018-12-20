@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerService } from '../serverservice.service';
 
 @Component({
   //selector: 'app-servers', //use as tag
@@ -13,18 +14,20 @@ export class ServersComponent implements OnInit {
   server = "Server Not Created!!";
   serverName = '';
   isServerCreated = false;
+  id = 10;
+  name = "Rajesh";
+  constructor(private serverService: ServerService) {
+    this.serverService=serverService;
+    serverService.consoleLog("Service Opened From App Module...!");
 
-  constructor() {
     setTimeout(() => {
       this.disable = true;
     }, 5000);
   }
-
   ngOnInit() {
   }
-  id = 10;
-  name = "Rajesh";
 
+  
   getServerId() {
     return this.id;
   }

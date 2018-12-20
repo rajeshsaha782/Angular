@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { UserModule } from './user/user.module';
+import { ServerService } from './serverservice.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { ServersComponent } from './servers/servers.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    UserModule
     
   ],
   providers: [],
